@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ChatbotBubble = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    // Écouter l'événement global pour forcer l'ouverture du chatbot depuis une autre page
+    useEffect(() => {
+        const handleOpenTrigger = () => {
+            setIsOpen(true);
+        };
+
+        window.addEventListener('openChatbot', handleOpenTrigger);
+
+        // Nettoyage de l'écouteur pour éviter les fuites de mémoire
+        return () => {
+            window.removeEventListener('openChatbot', handleOpenTrigger);
+        };
+    }, []);
 
     return (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans">

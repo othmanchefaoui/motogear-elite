@@ -2,11 +2,10 @@ import React from 'react';
 
 const Guides = () => {
 
-    // Fonction pour simuler ou déclencher l'ouverture du chatbot
+    // Fonction pour déclencher l'ouverture réelle du chatbot
     const handleLaunchChatbot = () => {
-        // Si votre chatbot écoute un événement ou utilise un état global, vous pourrez l'activer ici.
-        // Pour l'instant, on simule l'action de lancement.
-        alert("🤖 Lancement de l'assistant virtuel MotoGear...");
+        const event = new CustomEvent('openChatbot');
+        window.dispatchEvent(event);
     };
 
     return (
