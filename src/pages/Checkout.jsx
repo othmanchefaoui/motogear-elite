@@ -62,7 +62,10 @@ export default function Checkout() {
                         Merci pour votre confiance. Un conseiller de l'équipe <strong>MotoGear Élite</strong> va vous contacter sous peu pour valider l'expédition express 24h.
                     </p>
                     <div className="border-t border-gray-100 pt-4">
-                        <button onClick={() => navigate('/')} className="w-full bg-black hover:bg-gold text-white hover:text-black font-bold text-xs uppercase tracking-widest py-4 transition-colors rounded-sm">
+                        <button
+                            onClick={() => navigate('/')}
+                            className="w-full bg-black text-white border-2 border-transparent hover:border-[#D4AF37] hover:bg-[#111111] hover:text-[#D4AF37] font-black text-xs uppercase tracking-widest py-4 transition-all duration-200 rounded-sm"
+                        >
                             Retourner à l'accueil
                         </button>
                     </div>
@@ -123,7 +126,7 @@ export default function Checkout() {
                                     <button
                                         type="button"
                                         onClick={() => setCurrentStep(2)}
-                                        className="mt-2 bg-black text-white hover:bg-gold hover:text-black font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-sm transition-colors flex items-center gap-1.5"
+                                        className="mt-2 bg-black text-white border-2 border-transparent hover:border-[#D4AF37] hover:bg-[#111111] hover:text-[#D4AF37] font-black text-xs uppercase tracking-widest px-6 py-3 rounded-sm transition-all duration-200 flex items-center gap-1.5"
                                     >
                                         Valider l'identification <ArrowRight size={14} />
                                     </button>
@@ -176,7 +179,7 @@ export default function Checkout() {
                                     <button
                                         type="button"
                                         onClick={() => setCurrentStep(3)}
-                                        className="mt-2 bg-black text-white hover:bg-gold hover:text-black font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-sm transition-colors flex items-center gap-1.5"
+                                        className="mt-2 bg-black text-white border-2 border-transparent hover:border-[#D4AF37] hover:bg-[#111111] hover:text-[#D4AF37] font-black text-xs uppercase tracking-widest px-6 py-3 rounded-sm transition-all duration-200 flex items-center gap-1.5"
                                     >
                                         Confirmer la livraison <ArrowRight size={14} />
                                     </button>
@@ -232,7 +235,10 @@ export default function Checkout() {
                                         </div>
                                     )}
 
-                                    <button type="submit" className="w-full bg-black text-gold hover:bg-gold hover:text-black border border-gold font-bold text-xs uppercase tracking-widest py-4 transition-all rounded-sm shadow-lg flex items-center justify-center gap-2">
+                                    <button
+                                        type="submit"
+                                        className="w-full bg-[#111111] text-[#D4AF37] border-2 border-[#D4AF37] hover:bg-black hover:text-white hover:border-white font-black text-xs uppercase tracking-widest py-4 transition-all duration-200 rounded-sm shadow-lg flex items-center justify-center gap-2"
+                                    >
                                         <CreditCard size={14} /> Déclencher le paiement sécurisé — {grandTotal} DH
                                     </button>
                                 </form>
