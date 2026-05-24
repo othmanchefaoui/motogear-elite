@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Search, Heart, ShoppingCart, User, ChevronDown, BookOpen } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
-import { PRODUCTS } from '../../data/mockData'; // Importation du mock pour la recherche prédictif
+import { PRODUCTS } from '../../data/mockData'; // Importation du mock pour la recherche prédictive
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,11 +104,11 @@ const Navbar = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex flex-1 justify-center space-x-8 font-barlow text-sm font-semibold uppercase tracking-wider">
-            <Link to="/" className={`transition-colors duration-200 ${isActive('/')}`}>
+            <Link to="/" className="transition-colors duration-200" style={{ color: location.pathname === '/' ? '#D4AF37' : '' }}>
               Accueil
             </Link>
             <div className="relative group">
-              <Link to="/catalog" className={`flex items-center space-x-1 transition-colors duration-200 ${isActive('/catalog')}`}>
+              <Link to="/catalog" className="flex items-center space-x-1 transition-colors duration-200">
                 <span>Équipement Pilote</span>
                 <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" />
               </Link>
@@ -121,7 +121,7 @@ const Navbar = () => {
             </div>
 
             {/* Lien Guides & Conseils exigé par le CDC */}
-            <Link to="/guides" className={`flex items-center gap-1.5 transition-colors duration-200 ${isActive('/guides')}`}>
+            <Link to="/guides" className="flex items-center gap-1.5 transition-colors duration-200">
               <BookOpen size={15} />
               Guides & Conseils
             </Link>
@@ -164,7 +164,12 @@ const Navbar = () => {
               )}
             </Link>
 
-            <Link to="/checkout" className="p-2 hover:text-gold rounded-full hover:bg-gray-light transition-all duration-200 hidden sm:inline-block">
+            {/* BOUTON ESPACE PILOTE (LOGIN / SIGN IN) MUTÉ ET ACCESSIBLE PARTOUT */}
+            <Link
+              to="/login"
+              className="p-2 hover:text-gold rounded-full hover:bg-gray-light transition-all duration-200 flex items-center justify-center"
+              title="Espace Pilote / Connexion"
+            >
               <User className="w-5 h-5" />
             </Link>
           </div>
@@ -199,7 +204,7 @@ const Navbar = () => {
               </div>
             </form>
 
-            {/* GRILLE DES SUGGESTIONS CONFORME MAQUETTE CDC PHOTO 1 */}
+            {/* GRILLE DES SUGGESTIONS */}
             {searchQuery.trim().length > 1 && (
               <div className="mt-6 grid grid-cols-1 md:grid-cols-5 gap-6 pt-4 border-t border-gray-100 font-barlow">
                 {/* Suggestions textuelles à gauche */}
