@@ -26,6 +26,9 @@ export const PRODUCTS = [
     image: 'https://img.freepik.com/photos-gratuite/fond-casque-moto-course-rendu-hd_1409-4939.jpg?w=1060&t=st=1696438122~exp=1696438722~hmac=c5b174cf39ae847fcd41585fe1f7be446496f1cc874af8690314c7c770292931',
     rating: 4.9,
     ref: 'AGV-PIST-GP',
+    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE2',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Matériau', value: '100% fibre de carbone haute résistance' },
       { label: 'Ventilation', value: 'Extracteurs aérodynamiques en métal Pro' },
@@ -52,6 +55,9 @@ export const PRODUCTS = [
     image: 'https://img.freepik.com/photos-gratuite/casque-moto-course-rendu-hd_1409-4940.jpg?w=1800&t=st=1696438122~exp=1696438722~hmac=9668c08d0ccbcfa069eca1c00821111b15dc67cc9a37c4a44b3e79b935530cde',
     rating: 4.8,
     ref: 'SH-XSPR-NEO',
+    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE2',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Structure', value: 'Fibres de verre et résines organiques AIM+' },
       { label: 'Intérieur', value: 'Mousses ajustables et entièrement lavables' },
@@ -77,6 +83,9 @@ export const PRODUCTS = [
     image: 'https://esprit-motard.fr/wp-content/uploads/2025/09/featured-test-casque-moto-cross-ilm-726x-vintage-retro-1024x1019.jpg',
     rating: 4.5,
     ref: 'ILM-726X-VIN',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE1',
+    season: 'Mi-Saison',
     specs: [
       { label: 'Style', value: 'Nostalgic Off-Road / Scrambler' },
       { label: 'Visière', value: 'Casquette amovible 3 pressions incluse' },
@@ -102,6 +111,9 @@ export const PRODUCTS = [
     image: 'https://www.d-sarron.com/wp-content/uploads/2024/07/1720568682_choix-du-casque-moto-confort-et-adaptation-selon-le-type-jet-integral-ou-modulable.jpg',
     rating: 4.7,
     ref: 'SC-C5-MOD',
+    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE2',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Type', value: 'Modulable à mentonnière pivotante' },
       { label: 'Acoustique', value: 'Seulement 85 dB(A) à 100 km/h sur moto naked' },
@@ -127,6 +139,9 @@ export const PRODUCTS = [
     image: 'https://www.motodesinfo.fr/wp-content/uploads/2024/03/quelle-marque-de-casque-moto-choisir-jpg.webp',
     rating: 4.6,
     ref: 'SC-1400-EVO',
+    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE2',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Calotte', value: 'Fibre de carbone Ultra TCT légère' },
       { label: 'Système exclusif', value: 'Airfit Concept (pompe de gonflage des joues)' },
@@ -153,6 +168,9 @@ export const PRODUCTS = [
     image: 'https://mr-biker.fr/cdn/shop/products/mr-biker-veste-en-cuir-motard-4xl-28180334969027.jpg?v=1616777909',
     rating: 4.6,
     ref: 'MB-CUIR-CLS',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL', '3XL'],
+    ceNorm: 'CE1',
+    season: 'Mi-Saison',
     specs: [
       { label: 'Matière', value: 'Cuir de vachette pleine fleur 1.3mm' },
       { label: 'Protections', value: 'Coques amovibles CE épaules et coudes' },
@@ -177,6 +195,9 @@ export const PRODUCTS = [
     image: 'https://i.pinimg.com/originals/77/91/57/77915745acfa11759df51f9763c1106e.jpg',
     rating: 4.8,
     ref: 'AP-BION-V2',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE2',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Dorsale', value: 'Technologie Cell certifiée CE Niveau 2' },
       { label: 'Plastron', value: 'Protection pectorale rigide CE Niveau 2' },
@@ -201,6 +222,9 @@ export const PRODUCTS = [
     image: 'https://esprit-motard.fr/wp-content/uploads/2025/02/featured-test-de-la-veste-moto-dainese-racing-4-en-cuir-968x1024.jpg',
     rating: 4.9,
     ref: 'DA-RACE4-PERF',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE2',
+    season: 'Été',
     specs: [
       { label: 'Cuir', value: 'Cuir de vachette Tutu premium' },
       { label: 'Épaules', value: 'Inserts thermoformés avec plaques d\'aluminium' },
@@ -225,6 +249,9 @@ export const PRODUCTS = [
     image: 'https://www.fc-moto.de/WebRoot/FCMotoDB/Shops/10207048/5AAF/8DF5/FB94/CB9F/9FA9/4DEB/AE6F/32D5/12975b21-4337-4fb6-9009-5da866656de7_ml.jpg',
     rating: 4.7,
     ref: 'IX-VORT3-R',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE2',
+    season: 'Mi-Saison',
     specs: [
       { label: 'Matériau', value: 'Cuir de vachette flex haute résistance' },
       { label: 'Aérodynamisme', value: 'Bosse dorsale profilée MotoGP' },
@@ -251,6 +278,9 @@ export const PRODUCTS = [
     image: 'https://motard-adventure.com/wp-content/uploads/2019/09/DSCF6955.jpg',
     rating: 4.8,
     ref: 'TCX-CLIM-GTX',
+    sizes: ['39', '40', '41', '42', '43', '44', '45', '46'],
+    ceNorm: 'CE1',
+    season: 'Hiver',
     specs: [
       { label: 'Membrane', value: 'Gore-Tex Extended Comfort respirante et étanche' },
       { label: 'Semelle', value: 'Technologie Gore-Tex Surround avec grille d\'aération' },
@@ -275,6 +305,9 @@ export const PRODUCTS = [
     image: 'https://i.ebayimg.com/images/g/Px0AAOSwAkZoK~Xu/s-l1600.jpg',
     rating: 4.7,
     ref: 'AP-SMX6-V2',
+    sizes: ['39', '40', '41', '42', '43', '44', '45', '46'],
+    ceNorm: 'CE2',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Tige', value: 'Microfibre de haute technologie résistante' },
       { label: 'Protection latérale', value: 'Système d\'attelle de cheville TPU' },
@@ -299,6 +332,9 @@ export const PRODUCTS = [
     image: 'https://tse2.mm.bing.net/th/id/OIP.17XPRkKs1X8-CHS6BlqouAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3',
     rating: 4.9,
     ref: 'DA-NEX2-BLK',
+    sizes: ['39', '40', '41', '42', '43', '44', '45', '46'],
+    ceNorm: 'CE2',
+    season: 'Mi-Saison',
     specs: [
       { label: 'Système de sécurité', value: 'D-Axial anti-torsion de la cheville' },
       { label: 'Matériaux', value: 'Tissu D-Stone et microfibre supérieure' },
@@ -325,6 +361,9 @@ export const PRODUCTS = [
     image: 'https://medias.la-becanerie.com/cache/images_articles/3840_2160/sacoches-laterales-x-plor-waterproof-15l-421502.jpg',
     rating: 4.6,
     ref: 'XP-SAC-15LW',
+    sizes: [],
+    ceNorm: 'Non',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Capacité', value: '15 Litres par sacoche (30L au total)' },
       { label: 'Étanchéité', value: 'Fermeture par enroulement étanche IP66' },
@@ -349,6 +388,9 @@ export const PRODUCTS = [
     image: 'https://m.media-amazon.com/images/I/71ClvNrwFjL._AC_SL1200_.jpg',
     rating: 4.5,
     ref: 'MA-SUP-PHONE',
+    sizes: [],
+    ceNorm: 'Non',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Compatibilité', value: 'Smartphones jusqu\'à 6.7 pouces' },
       { label: 'Sécurité', value: 'Système de verrouillage magnétique anti-vibrations' },
@@ -373,6 +415,9 @@ export const PRODUCTS = [
     image: 'https://images.tcdn.com.br/img/img_prod/471823/suporte_retrovisor_moto_para_cameras_gopro_e_similares_telesin_3841_2_3a651af7445637f9a4837b453ccad264.jpg',
     rating: 4.7,
     ref: 'TL-SUP-GPRO',
+    sizes: [],
+    ceNorm: 'Non',
+    season: 'Toutes Saisons',
     specs: [
       { label: 'Matériau', value: 'Aluminium de qualité aéronautique anodisé' },
       { label: 'Compatibilité', value: 'GoPro Hero 9/10/11/12 et caméras similaires' },
@@ -399,6 +444,9 @@ export const PRODUCTS = [
     image: 'https://d1kvfoyrif6wzg.cloudfront.net/assets/images/82/main/none_f84acf778b246263b5459a037ede7ea8_f84acf7.JPEG',
     rating: 4.4,
     ref: 'FU-JET-D3O',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE1',
+    season: 'Mi-Saison',
     specs: [
       { label: 'Protection phalanges', value: 'Coques souples ergonomiques en D3O' },
       { label: 'Matière paume', value: '100% cuir de chèvre renforcé' },
@@ -423,6 +471,9 @@ export const PRODUCTS = [
     image: 'https://tse4.mm.bing.net/th/id/OIP.7cwWBEMIeQvPlmHQdn0HEwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3',
     rating: 4.8,
     ref: 'AP-SP8-V3',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE1',
+    season: 'Été',
     specs: [
       { label: 'Cuir', value: 'Cuir de chèvre et de vache premium' },
       { label: 'Phalanges', value: 'Coque de protection SP double densité' },
@@ -447,6 +498,9 @@ export const PRODUCTS = [
     image: 'https://www.classicride.fr/cache/images/product/gants-helstons-sport-ete-cuir-gold-jaune-or-moto-coque-carbone-homme-34926.jpg',
     rating: 4.7,
     ref: 'HE-SPRT-GLD',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE1',
+    season: 'Été',
     specs: [
       { label: 'Couleur / Style', value: 'Cuir Gold vieilli aspect vintage' },
       { label: 'Protection', value: 'Coque externe rigide en véritable Carbone' },
@@ -471,6 +525,9 @@ export const PRODUCTS = [
     image: 'https://tse1.mm.bing.net/th/id/OIP.88qDsjxz_HS7H9gsQh_DygHaHa?rs=1&pid=ImgDetMain&o=7&rm=3',
     rating: 4.9,
     ref: 'DA-CARB4-LNG',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    ceNorm: 'CE2',
+    season: 'Mi-Saison',
     specs: [
       { label: 'Matériau', value: 'Cuir de chèvre souple de première qualité' },
       { label: 'Articulations', value: 'Plaque ergonomique composite en fibre de carbone' },

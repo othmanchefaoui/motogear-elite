@@ -1,6 +1,6 @@
 import React from 'react';
-import { X, ShieldCheck, Tag, Layers, SlidersHorizontal, SunSnow, LayoutGrid } from 'lucide-react';
-import { CATEGORIES } from '../../data/mockData';
+import { X, ShieldCheck, Tag, Layers, SlidersHorizontal, SunSnow, LayoutGrid, Coins } from 'lucide-react';
+import { CATEGORIES, PRODUCTS } from '../../data/mockData';
 
 export default function Filters({
     activeCategory,
@@ -13,24 +13,32 @@ export default function Filters({
     setSelectedCeNorm,
     selectedSeason,
     setSelectedSeason,
+    priceRange, // Nouveau prop : [min, max]
+    setPriceRange, // Nouveau prop : fonction de mise à jour
     onResetFilters,
     isOpen,
     onClose
 }) {
-    // Listes d'options de filtrage (Correspondant aux critères du cahier des charges)
-    const brands = ['Shoei', 'Alpinestars', 'Furygan', 'Dainese', 'Bering'];
+    // Extraction dynamique des marques uniques depuis PRODUCTS
+    const brands = [...new Set(PRODUCTS.map((p) => p.brand))].sort();
+
     const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
     const ceNorms = [
-        { label: 'Homologué CE', value: 'Oui' },
+        { label: 'Homologué CE Niveau 1', value: 'CE1' },
+        { label: 'Homologué CE Niveau 2', value: 'CE2' },
         { label: 'Non Homologué', value: 'Non' }
     ];
     const seasons = ['Été', 'Hiver', 'Mi-Saison', 'Toutes Saisons'];
+
+    // Valeurs par défaut pour le contrôle de la réinitialisation
+    const DEFAULT_MIN_PRICE = 100;
+    const DEFAULT_MAX_PRICE = 15000; // Adapté au produit le plus cher du catalogue (AGV Pista GP RR)
 
     // Contenu des filtres partagé entre le rendu Desktop et le tiroir Mobile
     const FilterContent = () => (
         <div className="space-y-6 font-barlow text-[#111111]">
 
-            {/* SECTION 1 : CATÉGORIES (Votre code d'origine préservé et stylisé) */}
+            {/* SECTION 1 : CATÉGORIES */}
             <div className="border-b border-gray-100 pb-5">
                 <h3 className="text-xs font-black uppercase tracking-widest text-[#111111] mb-4 flex items-center gap-1.5">
                     <LayoutGrid size={13} className="text-[#D4AF37]" /> Catégories
@@ -55,12 +63,39 @@ export default function Filters({
                 </ul>
             </div>
 
-            {/* SECTION 2 : MARQUE (Cahier des charges) */}
+            {/* NOUVELLE SECTION : FILTRE DE PRIX (Comme sur la capture) */}
+            <div className="border-b border-gray-100 pb-5">
+                <h4 className="text-xs font-black uppercase tracking-wider mb-3 flex items-center gap-1.5 text-gray-500">
+                    <Coins size={12} /> Prix (DH)
+                </h4>
+                <div className="space-y-3 px-1">
+                    <input
+                        type="range"
+                        min={DEFAULT_MIN_PRICE}
+                        max={DEFAULT_MAX_PRICE}
+                        value={priceRange ? priceRange[1] : DEFAULT_MAX_PRICE}
+                        onChange={(e) => {
+                            if (setPriceRange) {
+                                setPriceRange([priceRange ? priceRange[0] : DEFAULT_MIN_PRICE, parseInt(e.target.value)]);
+                            }
+                        }}
+                        className="w-full accent-[#D4AF37] h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    />
+                    <div className="flex justify-between text-[11px] font-bold uppercase tracking-wide text-gray-600">
+                        <span>{priceRange ? priceRange[0] : DEFAULT_MIN_PRICE} DH</span>
+                        <span className="text-[#D4AF37] bg-gray-900 px-1.5 py-0.5 rounded-xs text-[10px]">
+                            Max: {priceRange ? priceRange[1] : DEFAULT_MAX_PRICE} DH
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            {/* SECTION 2 : MARQUE */}
             <div className="border-b border-gray-100 pb-5">
                 <h4 className="text-xs font-black uppercase tracking-wider mb-3 flex items-center gap-1.5 text-gray-500">
                     <Tag size={12} /> Marque
                 </h4>
-                <div className="space-y-2 max-h-40 overflow-y-auto pr-1">
+                <div className="space-y-2 max-h-48 overflow-y-auto pr-1 scrollbar-thin">
                     <label className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wide cursor-pointer">
                         <input
                             type="radio"
@@ -86,7 +121,7 @@ export default function Filters({
                 </div>
             </div>
 
-            {/* SECTION 3 : TAILLE (Cahier des charges) */}
+            {/* SECTION 3 : TAILLE */}
             <div className="border-b border-gray-100 pb-5">
                 <h4 className="text-xs font-black uppercase tracking-wider mb-3 flex items-center gap-1.5 text-gray-500">
                     <Layers size={12} /> Taille disponible
@@ -118,7 +153,7 @@ export default function Filters({
                 </div>
             </div>
 
-            {/* SECTION 4 : NORME CE (Cahier des charges) */}
+            {/* SECTION 4 : NORME CE */}
             <div className="border-b border-gray-100 pb-5">
                 <h4 className="text-xs font-black uppercase tracking-wider mb-3 flex items-center gap-1.5 text-gray-500">
                     <ShieldCheck size={12} /> Certification CE
@@ -143,7 +178,7 @@ export default function Filters({
                                 onChange={() => setSelectedCeNorm(norm.value)}
                                 className="w-3.5 h-3.5 accent-black border-gray-300"
                             />
-                            <span className={norm.value === 'Oui' ? 'text-emerald-700 font-bold' : ''}>
+                            <span className={norm.value === 'CE2' ? 'text-emerald-700 font-bold' : ''}>
                                 {norm.label}
                             </span>
                         </label>
@@ -151,7 +186,7 @@ export default function Filters({
                 </div>
             </div>
 
-            {/* SECTION 5 : SAISONNALITÉ (Cahier des charges) */}
+            {/* SECTION 5 : SAISONNALITÉ */}
             <div className="pb-2">
                 <h4 className="text-xs font-black uppercase tracking-wider mb-3 flex items-center gap-1.5 text-gray-500">
                     <SunSnow size={12} /> Saisonnalité
@@ -182,28 +217,34 @@ export default function Filters({
                 </div>
             </div>
 
-            {/* BOUTON RAZ GLOBAL (Apparaît si des filtres secondaires sont actifs) */}
-            {(selectedBrand !== 'all' || selectedSize !== 'all' || selectedCeNorm !== 'all' || selectedSeason !== 'all') && (
-                <button
-                    onClick={onResetFilters}
-                    className="w-full mt-2 bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-[10px] font-bold uppercase tracking-widest py-2.5 rounded-sm transition-all"
-                >
-                    Réinitialiser les filtres
-                </button>
-            )}
+            {/* BOUTON RAZ GLOBAL (Mis à jour pour prendre en compte le prix) */}
+            {(selectedBrand !== 'all' ||
+                selectedSize !== 'all' ||
+                selectedCeNorm !== 'all' ||
+                selectedSeason !== 'all' ||
+                (priceRange && priceRange[1] !== DEFAULT_MAX_PRICE)) && (
+                    <button
+                        onClick={onResetFilters}
+                        className="w-full mt-2 bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-[10px] font-bold uppercase tracking-widest py-2.5 rounded-sm transition-all"
+                    >
+                        Réinitialiser les filtres
+                    </button>
+                )}
         </div>
     );
 
     return (
         <>
-            {/* VERSION DESKTOP : Panneau fixe à gauche */}
-            <div className="hidden lg:block w-64 shrink-0 bg-white border border-gray-200 p-6 rounded-sm sticky top-24 h-fit shadow-xs">
-                <div className="flex items-center justify-between pb-3 border-b border-gray-100 mb-4">
+            {/* VERSION DESKTOP : Panneau fixe à gauche avec défilement interne indépendant */}
+            <div className="hidden lg:flex flex-col w-64 shrink-0 bg-white border border-gray-200 p-6 rounded-sm sticky top-24 h-[calc(100vh-120px)] shadow-xs">
+                <div className="flex items-center justify-between pb-3 border-b border-gray-100 mb-4 shrink-0">
                     <h2 className="text-xs font-black uppercase tracking-widest text-[#111111] flex items-center gap-1.5">
                         <SlidersHorizontal size={13} className="text-[#D4AF37]" /> Affiner par
                     </h2>
                 </div>
-                <FilterContent />
+                <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin">
+                    <FilterContent />
+                </div>
             </div>
 
             {/* VERSION MOBILE DRAWER : Tiroir coulissant latéral */}
