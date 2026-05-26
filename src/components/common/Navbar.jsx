@@ -98,7 +98,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="font-bebas text-3xl sm:text-4xl tracking-widest text-black select-none">
-              MOTO<span className="text-gold">GEAR</span><span className="text-xs font-barlow font-bold align-super ml-1 text-gold hidden sm:inline-block">ELITE</span>
+              MOTO<span className="text-gold">GEAR</span>
             </Link>
           </div>
 

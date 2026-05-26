@@ -10,7 +10,7 @@ export default function Hero() {
             {/* Image de fond premium (Moto et équipement) */}
             <img
                 src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=1600&auto=format&fit=crop"
-                alt="MotoGear Elite Hero Banner"
+                alt="MotoGear Hero Banner"
                 className="absolute inset-0 w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse-slow"
                 style={{ animationDuration: '10s' }}
             />

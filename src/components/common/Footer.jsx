@@ -26,7 +26,7 @@ const Footer = () => {
               MOTO<span className="text-[#D4AF37]">GEAR</span>
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed font-light">
-              MotoGear Elite est la destination ultime des motards passionnés au Maroc. Nous sélectionnons le meilleur des équipements homologués pour garantir votre sécurité et votre style sur la route.
+              MotoGear est la destination ultime des motards passionnés au Maroc. Nous sélectionnons le meilleur des équipements homologués pour garantir votre sécurité et votre style sur la route.
             </p>
             <div className="space-y-2 pt-2">
               <div className="flex items-center space-x-3 text-sm text-gray-300">
@@ -142,7 +142,7 @@ const Footer = () => {
         {/* Ligne de séparation */}
         <div className="border-t border-gray-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500 font-light">
-            &copy; {new Date().getFullYear()} MotoGear Elite. Tous droits réservés. Développé au Maroc pour les motards exigeants.
+            &copy; {new Date().getFullYear()} MotoGear. Tous droits réservés. Développé au Maroc pour les motards exigeants.
           </p>
 
           {/* Méthodes de paiement & Sécurité */}

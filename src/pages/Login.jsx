@@ -17,7 +17,7 @@ export default function Login() {
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
                 <div className="text-center">
                     <h2 className="text-4xl font-black uppercase tracking-tighter text-black font-bebas">
-                        MOTO<span className="text-[#D4AF37]">GEAR</span> ELITE
+                        MOTO<span className="text-[#D4AF37]">GEAR</span>
                     </h2>
                     <h2 className="mt-6 text-2xl font-bold uppercase tracking-tight text-black">
                         Bon retour parmi nous

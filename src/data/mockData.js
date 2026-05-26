@@ -1,4 +1,4 @@
-// Données structurées pour MotoGear Elite
+// Données structurées pour MotoGear
 
 export const CATEGORIES = [
   { id: 'all', name: 'Tous les produits' },

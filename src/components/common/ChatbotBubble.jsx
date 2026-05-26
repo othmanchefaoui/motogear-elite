@@ -57,7 +57,7 @@ const ChatbotBubble = () => {
                     <div className="flex-1 p-4 bg-gray-50 space-y-3 overflow-y-auto flex flex-col">
                         {/* Message du Bot */}
                         <div className="bg-white p-3 rounded-xl rounded-tl-none shadow-sm max-w-[85%] border border-gray-100 text-sm text-gray-800 leading-relaxed">
-                            Bonjour ! Bienvenue chez MotoGear Elite. Je peux vous guider dans le choix de votre casque ou vérifier l'état de votre commande. Que cherchez-vous aujourd'hui ? 🏍️
+                            Bonjour ! Bienvenue chez MotoGear. Je peux vous guider dans le choix de votre casque ou vérifier l'état de votre commande. Que cherchez-vous aujourd'hui ? 🏍️
                         </div>
                     </div>
 
